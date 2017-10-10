@@ -39,9 +39,10 @@ noremap <up> <nop>
 noremap <down> <nop>
 
 " Quick editing of most common files
-nnoremap <leader>eb :vsplit ~/.bashrc<cr>
-nnoremap <leader>ep :vsplit ~/.profile<cr>
+" This style of mapping may be good plugin fodder!
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>eev :e $MYVIMRC<cr>
+nnoremap <leader>ehv :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Abbreviations
