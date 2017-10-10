@@ -4,6 +4,7 @@ execute pathogen#infect('bundles/{}')
 set number
 set relativenumber
 set ruler
+set numberwidth=5
 
 " whitespace management
 set tabstop=4
