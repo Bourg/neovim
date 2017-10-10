@@ -1,5 +1,4 @@
-let mapleader=","
-let maplocalleader="."
+execute pathogen#infect('bundles/{}')
 
 " numbering
 set number
@@ -17,13 +16,15 @@ set shiftwidth=4
 set splitright
 set splitbelow
 
-" for the integrated terminal
-tnoremap <Esc> <C-\><C-n>
-
-execute pathogen#infect('bundles/{}')
-
 " Allows for faster updating of plugins that poll
 set updatetime=100
+
+" Leader keys
+let mapleader=","
+let maplocalleader="."
+
+" for the integrated terminal
+tnoremap <Esc> <C-\><C-n>
 
 " No more escape key
 inoremap jk <esc>
