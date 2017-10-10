@@ -29,6 +29,13 @@ tnoremap <Esc> <C-\><C-n>
 " No more escape key
 inoremap jk <esc>
 inoremap kj <esc>
+inoremap <esc> <nop>
+
+" Arrow keys are for the weak
+noremap <left> <nop>
+noremap <right> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
 
 " Quick editing of most common files
 nnoremap <leader>eb :vsplit ~/.bashrc<cr>
