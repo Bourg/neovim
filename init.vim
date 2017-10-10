@@ -1,3 +1,5 @@
+let mapleader=","
+
 " numbering
 set number
 set relativenumber
@@ -17,3 +19,6 @@ set splitbelow
 tnoremap <Esc> <C-\><C-n>
 
 execute pathogen#infect('bundles/{}')
+
+" Allows for faster updating of plugins that poll
+set updatetime=100
