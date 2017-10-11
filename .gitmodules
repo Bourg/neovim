@@ -1,3 +1,9 @@
 [submodule "vim-gitgutter"]
 	path = bundles/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "bundles/vim-racket"]
+	path = bundles/vim-racket
+	url = https://github.com/wlangstroth/vim-racket.git
+[submodule "bundles/rainbow_parentheses.vim"]
+	path = bundles/rainbow_parentheses.vim
+	url = https://github.com/kien/rainbow_parentheses.vim.git

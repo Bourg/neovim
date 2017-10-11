@@ -52,3 +52,10 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Abbreviations
 iabbrev @E austin@bourg.me
 iabbrev @G github.com/Bourg
+
+" RainbowParens on!
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+au Syntax * RainbowParenthesesLoadChevrons
