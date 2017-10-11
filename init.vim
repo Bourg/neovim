@@ -49,6 +49,9 @@ nnoremap <leader>eev :e $MYVIMRC<cr>
 nnoremap <leader>ehv :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Easy terminal
+nnoremap <leader>ot :terminal
+
 " Abbreviations
 iabbrev @E austin@bourg.me
 iabbrev @G github.com/Bourg
