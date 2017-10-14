@@ -1,10 +1,17 @@
 execute pathogen#infect('bundles/{}')
 
 " numbering
-set number
-set relativenumber
 set ruler
 set numberwidth=5
+set number
+set relativenumber
+
+augroup linenumbering
+    autocmd!
+    autocmd InsertEnter * :set norelativenumber
+    autocmd InsertLeave * :set relativenumber
+augroup END
+
 
 " whitespace management
 set tabstop=4
@@ -13,16 +20,20 @@ set shiftround
 set autoindent
 set shiftwidth=4
 
-" split in a more natural direction
+" split optimizations
 set splitright
 set splitbelow
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
 
 " Allows for faster updating of plugins that poll
 set updatetime=100
 
 " Leader keys
 let mapleader=","
-let maplocalleader="."
+let maplocalleader=" "
 
 " for the integrated terminal
 tnoremap <Esc> <C-\><C-n>
@@ -44,13 +55,13 @@ inoremap <down> <nop>
 
 " Quick editing of most common files
 " This style of mapping may be good plugin fodder!
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>eev :e $MYVIMRC<cr>
-nnoremap <leader>ehv :split $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+noremap <leader>ev :vsplit $MYVIMRC<cr>
+noremap <leader>eev :e $MYVIMRC<cr>
+noremap <leader>ehv :split $MYVIMRC<cr>
+noremap <leader>sv :source $MYVIMRC<cr>
 
 " Easy terminal
-nnoremap <leader>ot :terminal
+noremap <leader>ot :terminal
 
 " Abbreviations
 iabbrev @E austin@bourg.me
