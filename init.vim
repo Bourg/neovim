@@ -73,3 +73,12 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 au Syntax * RainbowParenthesesLoadChevrons
+
+" Rust Buffer shit
+autocmd FileType rust nnoremap <buffer> <localleader>cb :!cargo build<return>
+autocmd FileType rust nnoremap <buffer> <localleader>cr :!cargo run<return>
+autocmd FileType rust nnoremap <buffer> <localleader>ct :!cargo test<return>
+autocmd FileType rust nnoremap <buffer> <localleader>cc :!cargo clean<return>
+
+" Ruby only indent by 2
+autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=0 smarttab
