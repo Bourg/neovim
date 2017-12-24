@@ -13,3 +13,6 @@
 [submodule "bundles/auto-pairs"]
 	path = bundles/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "bundles/tender.vim"]
+	path = bundles/tender.vim
+	url = https://github.com/jacoborus/tender.vim.git

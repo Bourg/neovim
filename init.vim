@@ -1,5 +1,8 @@
 execute pathogen#infect('bundles/{}')
 
+au BufReadPost *.rkt,*.rktl set filetype=racket
+au filetype racket set lisp
+
 " numbering
 set ruler
 set numberwidth=5
@@ -7,9 +10,9 @@ set number
 set relativenumber
 
 augroup linenumbering
-    autocmd!
-    autocmd InsertEnter * :set norelativenumber
-    autocmd InsertLeave * :set relativenumber
+autocmd!
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
 augroup END
 
 
@@ -63,16 +66,13 @@ noremap <leader>sv :source $MYVIMRC<cr>
 " Easy terminal
 noremap <leader>ot :terminal
 
+" Indentation Shortcuts
+nnoremap <leader>f mfgg=G`f
+autocmd FileType rust nnoremap <buffer> <leader>f :w<return>:!rustfmt %<return>:edit!<return><return>
+
 " Abbreviations
 iabbrev @E austin@bourg.me
 iabbrev @G github.com/Bourg
-
-" RainbowParens on!
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-au Syntax * RainbowParenthesesLoadChevrons
 
 " Rust Buffer shit
 autocmd FileType rust nnoremap <buffer> <localleader>cb :!cargo build<return>
@@ -82,3 +82,47 @@ autocmd FileType rust nnoremap <buffer> <localleader>cc :!cargo clean<return>
 
 " Ruby only indent by 2
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=0 smarttab
+
+" RainbowParens Colors
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+    let g:rbpt_max = 16
+
+" RainbowParens on!
+if &lisp
+    au VimEnter * RainbowParenthesesToggle
+    au Syntax * RainbowParenthesesLoadRound
+    au Syntax * RainbowParenthesesLoadSquare
+    au Syntax * RainbowParenthesesLoadBraces
+    au Syntax * RainbowParenthesesLoadChevrons
+end
+
+" If you have vim >=8.0 or Neovim >= 0.1.5
+if (has("termguicolors"))
+set termguicolors
+endif
+
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" Theme
+syntax enable
+colorscheme tender
+
+filetype plugin indent on
