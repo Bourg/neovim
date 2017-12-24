@@ -68,7 +68,7 @@ noremap <leader>ot :terminal
 
 " Indentation Shortcuts
 nnoremap <leader>f mfgg=G`f
-autocmd FileType rust nnoremap <buffer> <leader>f :w<return>:!rustfmt %<return>:edit!<return><return>
+autocmd FileType rust nnoremap <buffer> <leader>f :RustFmt<return>
 
 " Abbreviations
 iabbrev @E austin@bourg.me
