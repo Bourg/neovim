@@ -16,3 +16,6 @@
 [submodule "bundles/tender.vim"]
 	path = bundles/tender.vim
 	url = https://github.com/jacoborus/tender.vim.git
+[submodule "bundles/typescript-vim"]
+	path = bundles/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
