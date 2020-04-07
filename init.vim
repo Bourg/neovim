@@ -41,10 +41,9 @@ let maplocalleader=" "
 " for the integrated terminal
 tnoremap <Esc> <C-\><C-n>
 
-" No more escape key
+" Easy escape key
 inoremap jk <esc>
 inoremap kj <esc>
-inoremap <esc> <nop>
 
 " Arrow keys are for the weak
 noremap <left> <nop>
